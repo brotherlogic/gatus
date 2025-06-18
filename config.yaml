@@ -5,3 +5,9 @@ endpoints:
     interval: 1m
     conditions:
       - "[STATUS] == 200"
+
+  - name: Uptime Kuma
+    url: https://uptime.brotherlogic.com
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
