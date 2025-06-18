@@ -5,7 +5,7 @@ git fetch -p
 git merge origin/main
 
 # Do the github token replace
-TOKEN=$(<"~/.github_token")
+TOKEN=$(<"/home/simon/.github_token")
 sed -e "s/INSERT_TOKEN/$TOKEN/g" config.yaml.tmpl > config.yaml
 
 if ! diff .git/refs/heads/main running_version; then
