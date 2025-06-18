@@ -1,0 +1,7 @@
+metrics: true
+endpoints:
+  - name: Docker Registry
+    url: https://registry.brotherlogic-backend.com
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
