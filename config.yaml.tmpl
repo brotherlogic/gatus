@@ -16,3 +16,7 @@ endpoints:
     interval: 1m
     conditions:
       - "[STATUS] == 200"
+     alerts:
+      - type: github
+        description: "Uptime is Downtime"
+        send-on-resolved: true
