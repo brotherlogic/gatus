@@ -6,7 +6,7 @@ git merge origin/main
 
 # Do the github token replace
 TOKEN=$(<"/home/simon/.github_token")
-sed -e "s/INSERT_TOKEN/$TOKEN/g" config.yaml.tmpl > config.yaml
+sed -e "s/INSERT_TOKEN/$TOKEN/g" config.tmpl.yaml > config.yaml
 
 if ! diff .git/refs/heads/main running_version; then
     echo "Restarting Gataus"
