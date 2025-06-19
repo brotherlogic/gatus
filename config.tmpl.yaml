@@ -1,0 +1,22 @@
+metrics: true
+alerting:
+  github:
+    repository-url: "https://github.com/brotherlogic/prod"
+    token: INSERT_TOKEN
+
+endpoints:
+  - name: Docker Container Registry
+    url: https://registry.brotherlogic-backend.com
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Uptime Kuma
+    url: https://uptime.brotherlogic.com
+    interval: 1m
+    conditions:
+      - "[STATUS] == 200"
+    alerts:
+    - type: github
+      description: "Uptime is Downtime"
+      send-on-resolved: true
