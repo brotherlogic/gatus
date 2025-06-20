@@ -12,11 +12,11 @@ endpoints:
       - "[STATUS] == 200"
 
   - name: Uptime Kuma
-    url: https://uptime.brotherlogic.com
+    url: https://uptime.brotherlogic-backend.com
     interval: 1m
     conditions:
       - "[STATUS] == 200"
     alerts:
-    - type: github
-      description: "Uptime is Downtime"
-      send-on-resolved: true
+      - type: github
+        description: "Uptime is Downtime"
+        send-on-resolved: true
