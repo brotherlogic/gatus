@@ -16,3 +16,9 @@ if ! diff .git/refs/heads/main running_version; then
 fi
 
 cp .git/refs/heads/main running_version
+
+# Ensure gatus is actually running
+if ! sudo docker ps | grep gatus; then
+    echo "Starting Gatus"
+     sudo docker run -d -p 8080:8080 --mount type=bind,source="$(pwd)"/config.yaml,target=/config/config.yaml --name gatus twinproduction/gatus
+fi
