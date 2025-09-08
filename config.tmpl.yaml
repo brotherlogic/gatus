@@ -2,7 +2,7 @@ metrics: true
 
 storage:
   type: postgres
-  path: "postgres://simon@127.0.0.1:5432/gatus?sslmode=disable"
+  path: "postgres://simon:simonpass@127.0.0.1:5432/gatus?sslmode=disable"
 
 alerting:
   github:
